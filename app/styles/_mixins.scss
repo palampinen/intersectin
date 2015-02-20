@@ -1,0 +1,36 @@
+@mixin vh-middle() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+@mixin background-gradient($bg,$color1, $color2) {
+	background:$bg;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2));
+	background:-ms-linear-gradient(180deg, $color1 0%,$color2 100%);
+	background:-webkit-linear-gradient(180deg, $color1 0%, $color2 100%);
+	background:linear-gradient(180deg, $color1 0%,$color2 100%);
+	background-color:$bg;
+	background-size:1px 100%;
+	background-repeat:repeat;
+	background-attachment:fixed;
+}
+
+
+@mixin anim($ms) {
+-moz-transition: all $ms cubic-bezier(0.25, 0.8, 0.25, 1);
+-ms-transition: all $ms cubic-bezier(0.25, 0.8, 0.25, 1);
+-webkit-transition: all $ms cubic-bezier(0.25, 0.8, 0.25, 1);
+transition: all $ms cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+@mixin btn-round(){
+	box-shadow:0 0px 2px rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.4);
+	-webkit-box-shadow:0 0px 3px rgba(0,0,0,0.15), 0 3px 5px rgba(0,0,0,0.4);
+	border-radius:50%;-webkit-border-radius:50%;
+	transition:all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+ 	-webkit-transition:all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+ 	padding:0; min-height:0; min-width:0;
+}

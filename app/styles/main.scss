@@ -1,0 +1,104 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "_variables.scss";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$happy: rgba(240,240,240,.25);
+$bg: #007191;
+
+@import "_mixins.scss";
+
+html,body {min-height:100%;}
+body { background:$bg;}
+
+#canvas {
+  /* width: 100%; height:100%; */
+  position: absolute; bottom:0;top:0; left:0; right:0;
+  z-index: 1;
+}
+
+#grid {
+  overflow:hidden; 
+  position: absolute; bottom:0;top:0; left:0; right:0; // full size
+  z-index: 2;
+
+  .start {
+
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    
+    border-width:5vmin;
+    border-style:solid;
+    border-color:transparent;
+
+    @include anim(100ms);
+
+    &.left {left:0; margin-top:-5vmin;    border-width:5vmin 0 5vmin 2.5vmin;  border-color:transparent transparent transparent $happy;}
+    &.right {right:0; margin-top:-5vmin;  border-width:5vmin 2.5vmin 5vmin  0;  border-color:transparent $happy transparent transparent; }
+    &.top {top:0; margin-left:-5vmin;     border-width:2.5vmin 5vmin 0 5vmin;  border-color:$happy transparent transparent transparent; }
+    &.bottom {bottom:0; margin-left:-5vmin;  border-width:0 5vmin 2.5vmin 5vmin;  border-color:transparent transparent $happy transparent;}
+  }
+
+  .dot {
+
+    position: absolute;
+    width:2.5vmin;
+    height:2.5vmin;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin:-1.25vmin 0 0 -1.25vmin;
+
+    &.center {
+      background:rgba(0,0,0,.5); 
+      background:#003848; 
+      background:#3C91A9; 
+    }
+
+    &.trial {
+      background:#FFF; 
+    }
+  }
+
+  .connect {
+    position: absolute;
+  }
+}
+
+
+.btn-outline {
+  color:rgba(255,255,255,.3); 
+  border-color:rgba(255,255,255,.3); 
+  background:transparent; 
+  text-transform:uppercase;  
+  border-radius: 50px; 
+  padding-left: 45px; 
+  padding-right: 45px;
+  font-size: 5vmin;
+  font-weight: 100;
+  @include anim(200ms);
+
+  &:active,&:hover, &:focus { color:rgba(255,255,255,.6); border-color:rgba(0,0,0,.3);background:rgba(255,255,255,.05);}
+}
+
+.vh-middle {@include vh-middle();}
+
+
+
+.result {
+ @include anim(400ms); z-index: 3;
+ opacity:1; text-align: center;
+
+ &>div {font-size:5vmin; color:rgba(0,0,0,.3); text-align:right; line-height:1.2;margin-bottom:2vmin;
+  .number { font-size:10vmin; font-family:Montserrat; color:#FFDF60; opacity:0.9; font-weight:700; }
+  .best { 
+    display: block;
+    .number {font-size:5vmin; color:#FFF;}
+   }
+  }
+}
+
+.result.ng-hide {opacity:0;}

@@ -1,0 +1,81 @@
+
+// Hexagon
+
+.hexagon {
+	display:block;
+	float:left;
+	position: relative;
+	width: 30vmin;
+	height: 17.321vmin;
+	margin: 8.660vmin 0px;
+	background:transparent;
+	border:2px solid $happy2;
+	border-width: 0 1px;
+	/* &.even {margin-top:200px;} */
+
+	&:before,&:after{
+	display:block;
+	content:'';
+	position: absolute;
+	z-index: 1;
+	width: 21vmin;
+	height: 21vmin;
+	overflow: visible;
+	-webkit-transform: scaleY(0.5774) rotate(-45deg);
+	-ms-transform: scaleY(0.5774) rotate(-45deg);
+	transform: scaleY(0.5774) rotate(-45deg);
+	background: transparent;
+	left: 4.393vmin;
+	left: 4.2vmin;
+	border:1px solid $happy2;
+	}
+
+	&:before, {
+		top: -10.60vmin;
+		border-width:1px 1px 0 0;
+		border-width:1.1px 1.1px 0 0;
+	}
+
+	&:after {
+		bottom: -10.60660vmin;
+		border-width:0 0 1px 1px;
+		border-width:0 0 1.1px 1.1px;
+	}
+}
+/*counter transform the bg image on the caps
+.hexTop:after,
+.hexBottom:after {
+	content: "";
+	position: absolute;
+	width: 30vmin;
+	height: 17.320508075688775vmin;
+	-webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-8.66025vmin);
+	-ms-transform: rotate(45deg) scaleY(1.7321) translateY(-8.66025vmin);
+	transform: rotate(45deg) scaleY(1.7321) translateY(-8.66025vmin);
+	-webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+	background: inherit;
+}
+.hexTop {
+	top: -10.60vmin;
+	border-width:1px 1px 0 0;
+}
+
+.hexBottom {
+	bottom: -10.60660vmin;
+	border-width:0 0 1px 1px;
+}
+
+.hexagon:after {
+	content: "";
+	position: absolute;
+	top: 0.0000px;
+	left: 0;
+	width: 30.00000vmin;
+	height: 17.32051vmin;
+	z-index: 2;
+	background: transparent;
+	background: inherit;
+}
+*/

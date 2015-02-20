@@ -1,0 +1,19 @@
+<!-- Template for main playboard -->
+<div id="grid" ng-click="stop($event)">
+
+	<span ng-repeat="(i,start) in starts" class="{{start.icon}} start {{start.type}}" style="{{start.dir}}:{{start.pos}}%"></span>
+	<span class="center dot" ng-show="center.coordinates.length" ng-style="{'top':center.coordinates[1]+'%','left':center.coordinates[0]+'%'}"></span>
+	<span class="trial dot" ng-show="trial.coordinates.length" ng-style="{'top':trial.coordinates[1]+'%','left':trial.coordinates[0]+'%'}"></span>
+
+</div>
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<div class="result vh-middle" ng-show="!going">
+	<div>distance <span class="number">{{distance}}</span>
+		<span class="best" ng-show="best">best <span class="number">{{best}}</span></span>
+
+	</div>
+
+	<a class="btn btn-default btn-lg btn-outline " ng-click="start()" >Start again</a>
+</div>
